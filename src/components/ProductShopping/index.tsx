@@ -2,9 +2,11 @@ import styles from "../../styles/Home.module.scss"
 import Image from "next/image"
 import { ProductCart } from "@/interfaces/products"
 interface ProductCartProps {
-    product: ProductCart
+    product: ProductCart,
+    add: (product: ProductCart) => void,
+    remove: (product: ProductCart) => void
 }
-export default function ProductShopping ({ product} : ProductCartProps) {
+export default function ProductShopping ({ product , add, remove} : ProductCartProps) {
   return (
     <div
       className={styles.card}
@@ -20,12 +22,16 @@ export default function ProductShopping ({ product} : ProductCartProps) {
       </p>
       <p>
         {product.price}
-       
+      </p>
+      <p>
+        {product.quantity}
       </p>
       <p>
         {product.rating.rate}
       </p>
-      <button title="Add to cart">Add to cart</button>
+      <button onClick={()=>add(product)} title="Add to cart">Add to cart</button>
+      <button onClick={()=>remove(product)} title="Remove from cart">Remove</button>
+    
     </div>
 
   )

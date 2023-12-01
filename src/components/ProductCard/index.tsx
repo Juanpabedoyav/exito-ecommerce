@@ -1,12 +1,16 @@
-import { Product } from "@/interfaces/products"
+import {  ProductCart } from "@/interfaces/products"
 import styles from "../../styles/Home.module.scss"
 import Image from "next/image"
 import { useRouter } from "next/router"
+import { useContext } from "react"
+import { CartContext } from "@/context/cart/CartContext"
 interface ProductCardProps {
-    product: Product
+    product: ProductCart
 }
 export default function ProductCard ({ product} : ProductCardProps) {
   const router = useRouter()
+  const {addProduct} =useContext(CartContext)
+  
   return (
     <div className={styles.card}>
       <section
@@ -30,7 +34,7 @@ export default function ProductCard ({ product} : ProductCardProps) {
           {product.rating.rate}
         </p>
       </section>
-      <button title="Add to cart">Add to cart</button>
+      <button onClick={()=> addProduct(product)} title="Add to cart">Add to cart</button>
     </div>
   )
 }

@@ -1,10 +1,13 @@
-import { Product } from "@/interfaces/products"
+import { CartContext } from "@/context/cart/CartContext"
+import {  ProductCart } from "@/interfaces/products"
 import Image from "next/image"
+import { useContext } from "react"
 
 interface ProductDetailProps {
-    product: Product
+    product: ProductCart
 }
 const ProductDetail = ({ product}: ProductDetailProps) => {
+  const {addProduct} =useContext(CartContext)
   return (
     <section>
       <div>
@@ -16,7 +19,7 @@ const ProductDetail = ({ product}: ProductDetailProps) => {
         <p>{product.description}</p>
         <p>{product.price}</p>
         <p>{product.rating.rate}</p>
-        <button title="add to cart">Add to Cart</button>
+        <button onClick={() => addProduct(product)} title="add to cart">Add to Cart</button>
       </div>
     </section>
   )
