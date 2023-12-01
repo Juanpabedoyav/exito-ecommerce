@@ -1,3 +1,4 @@
+import styles from "@/styles/Home.module.scss"
 import Head from "next/head"
 import { Product, ProductCart } from "@/interfaces/products"
 import HomeScreen from "@/screens/HomeScreen"
@@ -36,7 +37,7 @@ export default function Home({products}: HomeProps) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <input type="text" onChange={handleSearch}/>
+        <input className={styles.search} type="text" onChange={handleSearch} placeholder="Search your product ..."/>
         < HomeScreen products={products} />
         <CartScreen />
       </main>
