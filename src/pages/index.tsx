@@ -1,6 +1,6 @@
 import Head from "next/head"
 import { Product } from "@/interfaces/products"
-import ProductCard from "@/components/ProductCard"
+import HomeScreen from "@/screens/HomeScreen"
 
 
 interface HomeProps {
@@ -16,11 +16,7 @@ export default function Home({products}: HomeProps) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        {
-          products.map((product) => (
-            <ProductCard product={product} key={product.id} />
-          ))
-        }
+        < HomeScreen products={products} />
       </main>
     </>
   )
