@@ -1,8 +1,8 @@
 import ProductCard from "@/components/ProductCard"
-import { Product } from "@/interfaces/products"
+import {  ProductCart } from "@/interfaces/products"
 
 interface HomeScreenProps {
-    products: Product[]
+    products: ProductCart[]
 }
 export default function HomeScreen  ({ products }: HomeScreenProps) {
   return (
