@@ -2,6 +2,7 @@ import Head from "next/head"
 import { Product } from "@/interfaces/products"
 import HomeScreen from "@/screens/HomeScreen"
 import { useRef, useState } from "react"
+import CartScreen from "@/screens/CartScreen"
 
 
 interface HomeProps {
@@ -37,6 +38,7 @@ export default function Home({products}: HomeProps) {
       <main>
         <input type="text" onChange={handleSearch}/>
         < HomeScreen products={products} />
+        <CartScreen />
       </main>
     </>
   )
