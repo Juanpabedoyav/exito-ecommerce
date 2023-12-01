@@ -11,7 +11,6 @@
     width: 100%;
     justify-content: space-between;
     align-items: center;
-    background: black;
     ul{
         display: flex;
         flex-direction: row;
@@ -20,7 +19,6 @@
     li{
         cursor: pointer;
         list-style: none;
-        color: rgba(255, 255, 255, 0.6);
     }
    
 }
@@ -32,11 +30,20 @@
   border-radius: 8px;
   height: 2rem;
   border: none;
-  box-shadow: 1px 1px 1px  rgba(255, 255, 255, 0.401);
+  box-shadow: 0px 0px 3px  rgba(0, 0, 0, 0.562);
   padding: 1rem;
   font-size: 1rem;
 }
 
+.footer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 10vh;
+  background: black;
+  color: rgba(255, 255, 255, 0.6);
+}
 // .description a {
 //   display: flex;
 //   justify-content: center;
@@ -55,13 +62,22 @@
 
 
 .card {
-  padding: 1rem 1.2rem;
-  width: 40%;
-  border-radius: var(--border-radius);
-  background: rgba(var(--card-rgb), 0);
-  border: 1px solid rgba(var(--card-border-rgb), 0.15);
+  padding: 0.5rem;
+  width: 280px;
+  height: 633px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius:8px;
   transition: background 200ms, border 200ms;
   cursor: pointer;
+  section{
+    height: 80%;
+  }
+  img{
+    width: 100%;
+    mix-blend-mode: darken
+    }
 }
 
 .card span {
@@ -82,8 +98,8 @@
   max-width: 30ch;
 }
   .card:hover {
-    background: rgba(var(--card-rgb), 0.1);
-    border: 1px solid rgba(var(--card-border-rgb), 0.15);
+    background: rgba(0, 0, 0, 0.04);
+    outline: 1px solid #f78524;
   }
 
 /* Enable hover only on non-touch devices */
