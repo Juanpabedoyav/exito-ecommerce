@@ -1,8 +1,8 @@
-import { Product } from "@/interfaces/products"
+import {  ProductCart } from "@/interfaces/products"
 import ProductDetail from "@/components/ProductDetail"
 
 interface ProductDetailScreenProps {
-    product: Product
+    product: ProductCart
 }
 export default function ProductDetailScreen  ({ product }: ProductDetailScreenProps) {
   return (
