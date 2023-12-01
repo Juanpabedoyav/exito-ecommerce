@@ -1,9 +1,9 @@
-import { Product } from "@/interfaces/products"
+import { Product, ProductCart } from "@/interfaces/products"
 import ProductDetailScreen from "@/screens/ProductDetailScreen"
 import { GetStaticPropsContext } from "next"
 
 interface ItemDetailProps {
-    itemDetails: Product
+    itemDetails: ProductCart
 }
 export default function ItemDetail  ({itemDetails}: ItemDetailProps){
   return (
