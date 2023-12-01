@@ -1,12 +1,31 @@
 import Head from "next/head"
 import { Product } from "@/interfaces/products"
 import HomeScreen from "@/screens/HomeScreen"
+import { useRef, useState } from "react"
 
 
 interface HomeProps {
   products: Product[]
 }
 export default function Home({products}: HomeProps) {
+  const [input, setInput] = useState("")
+  //input search debounce
+  const debounceRef = useRef<NodeJS.Timeout>()
+
+  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+    e.preventDefault()
+    if (debounceRef.current) clearTimeout(debounceRef.current)
+    debounceRef.current = setTimeout(() => {
+      setInput(e.target.value)
+    }, 300)
+  }
+ 
+  if (input.length > 0) {
+    products = products.filter((product) => {
+      return product.title.toLowerCase().match(input.toLowerCase())
+    })
+  }
+ 
   return (
     <>
       <Head>
@@ -16,6 +35,7 @@ export default function Home({products}: HomeProps) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
+        <input type="text" onChange={handleSearch}/>
         < HomeScreen products={products} />
       </main>
     </>
