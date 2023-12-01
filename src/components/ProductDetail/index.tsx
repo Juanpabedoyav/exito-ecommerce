@@ -2,6 +2,7 @@ import { CartContext } from "@/context/cart/CartContext"
 import {  ProductCart } from "@/interfaces/products"
 import Image from "next/image"
 import { useContext } from "react"
+import Button from "../ui/ButtonAdd"
 
 interface ProductDetailProps {
     product: ProductCart
@@ -19,7 +20,8 @@ const ProductDetail = ({ product}: ProductDetailProps) => {
         <p>{product.description}</p>
         <p>{product.price}</p>
         <p>{product.rating.rate}</p>
-        <button onClick={() => addProduct(product)} title="add to cart">Add to Cart</button>
+        <Button onClick={() => addProduct(product)} title="add to cart"/>
+     
       </div>
     </section>
   )

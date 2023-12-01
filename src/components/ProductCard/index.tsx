@@ -4,6 +4,7 @@ import Image from "next/image"
 import { useRouter } from "next/router"
 import { useContext } from "react"
 import { CartContext } from "@/context/cart/CartContext"
+import Button from "../ui/ButtonAdd"
 interface ProductCardProps {
     product: ProductCart
 }
@@ -34,7 +35,7 @@ export default function ProductCard ({ product} : ProductCardProps) {
           {product.rating.rate}
         </p>
       </section>
-      <button onClick={()=> addProduct(product)} title="Add to cart">Add to cart</button>
+      <Button onClick={()=> addProduct(product)} title="Add to cart"/>
     </div>
   )
 }
