@@ -1,16 +1,17 @@
+import styles from "@/styles/Home.module.scss"
 import Link from "next/link"
+
 
 export default function Header  ()  {
   return (
-    <header>
-      <nav>
+    <header className={styles.header}>
+      <nav className={styles.nav}>
         <Link href={"/"}>
           <h1>Next.js</h1>
         </Link>
         <ul>
-          <li>Home</li>
-          <li>About</li>
-          <li>Contact</li>
+          <li>Categories</li>
+          <li>Cart</li>
         </ul>
       </nav>
     </header>
