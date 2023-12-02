@@ -2,6 +2,7 @@
 import styles from "@/styles/Home.module.scss"
 import Image from "next/image"
 import Link from "next/link"
+import { FacebookIcon, InstagramIcon, TwitterIcon, YoutubeIcon } from "@/components/Icons"
 export default function Footer  ()  {
   return (
     <footer className={styles.footer}>
@@ -16,9 +17,17 @@ export default function Footer  ()  {
       </ul>
       <h4>Follow us</h4>
       <ul className={styles.partners}>
-        <Link href="/">
+        <Link href="https://www.facebook.com/exito">
+          {FacebookIcon()}
         </Link>
-        <Link href="/">
+        <Link href="https://twitter.com/almacenesexito">
+          {TwitterIcon()}
+        </Link>
+        <Link href="https://www.instagram.com/exito/?hl=es-la">
+          {InstagramIcon()}
+        </Link>
+        <Link href="https://www.youtube.com/channel/UCmFF7DHCnRoK79xjS3bcTIA">
+          {YoutubeIcon()}
         </Link>
       </ul>
       <h4>Security pay</h4>

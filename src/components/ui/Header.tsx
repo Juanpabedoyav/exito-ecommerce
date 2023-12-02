@@ -18,7 +18,8 @@ export default function Header  ()  {
         <ul>
           <li>Categories</li>
           <li className={styles["cart-icon"]}>{CartIcon()}
-            <strong className={styles["cart-info"]}>{state.cart.length}</strong>
+            <strong className={styles["cart-info"]}>{state.cart.length}
+            </strong>
           </li>
         </ul>
       </nav>
