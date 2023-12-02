@@ -18,7 +18,7 @@ export default function Cart () {
   return (
     <>
       <Link className={styles["link-redirect"]} href={"/"}>Back to Home</Link>
-      <section>
+      <section className={styles["cart-container--full"]}>
         {
           state.cart.map((product) => (
             <ProductShopping product={product} key={product.id} add={addProduct} remove={removeProduct} removeOneByOne={removeProductByOne}/>
