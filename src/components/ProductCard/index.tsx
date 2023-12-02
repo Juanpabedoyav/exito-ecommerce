@@ -4,7 +4,7 @@ import Image from "next/image"
 import { useRouter } from "next/router"
 import { useContext } from "react"
 import { CartContext } from "@/context/cart/CartContext"
-import Button from "../ui/ButtonAdd"
+import Button from "../ui/Button"
 interface ProductCardProps {
     product: ProductCart
 }
@@ -16,10 +16,9 @@ export default function ProductCard ({ product} : ProductCardProps) {
     <div className={styles.card}>
       <section
         onClick={() => router.push(`/itemDetail/${product.id}`)}
-        
         key={product.id}
       >
-        <Image src={product.image} alt={product.title} width={150} height={150}/>
+        <Image priority quality={100} src={product.image} alt={product.title} width={100} height={250}/>
         <h2>
           {product.title} 
           <span>-&gt;</span>
