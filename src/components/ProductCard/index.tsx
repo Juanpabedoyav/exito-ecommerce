@@ -30,7 +30,7 @@ export default function ProductCard ({ product} : ProductCardProps) {
           <p className={style["product-category--card"]}>{product.category.toUpperCase()}</p>
           <p className={style["product-name--card"]} >{product.title.slice(0,50)}...</p>
           <p className={style["product-price--card"]}>Price: ${product.price}</p>
-          <p>Rating: {renderStars(product.rating.rate)}</p>
+          <p>Rating: {renderStars(product.rating.rate)} {product.rating.rate}</p>
         </div>
       </section>
       <Button onClick={()=> addProduct(product)} title="Add to cart"/>

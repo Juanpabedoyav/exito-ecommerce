@@ -21,7 +21,7 @@ const ProductDetail = ({ product}: ProductDetailProps) => {
       <div className={style["product-info"]}>
         <p className={style["product-description"]}><strong>Description:</strong> {product.description}</p>
         <p className={style["product-price"]}>Price: ${product.price}</p>
-        <p>Rating: {renderStars(product.rating.rate)}</p>
+        <p>Rating: {renderStars(product.rating.rate)} {product.rating.rate}</p>
         <Button onClick={() => addProduct(product)} title="add to cart"/>
       </div>
     </section>
