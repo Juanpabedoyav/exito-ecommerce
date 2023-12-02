@@ -7,7 +7,7 @@ import { CartContext } from "@/context/cart/CartContext"
 
 
 export default function Header  ()  {
-  const {state} =  useContext(CartContext)
+  const {state, toogleOrder} =  useContext(CartContext)
   console.log(state)
   return (
     <header className={styles.header}>
@@ -17,7 +17,7 @@ export default function Header  ()  {
         </Link>
         <ul>
           <li>Categories</li>
-          <li className={styles["cart-icon"]}>{CartIcon()}
+          <li onClick={()=> toogleOrder()} className={styles["cart-icon"]}>{CartIcon()}
             <strong className={styles["cart-info"]}>{state.cart.length}
             </strong>
           </li>
