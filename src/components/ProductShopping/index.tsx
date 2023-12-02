@@ -16,7 +16,7 @@ export default function ProductShopping ({ product , add, remove} : ProductCartP
     >
       <Image src={product.image} alt={product.title} width={80} height={80}/>
       <p className={styles["cart-item--name"]}>{product.title} </p>
-      <p> Price: {product.price}</p>
+      <p> Price c/u: {product.price}</p>
       <p> Quantity: {product.quantity}</p>
       <div className={styles["cart-actions"]} >
         <button className={styles["cart-add--button"]} onClick={()=>add(product)} title="Add to cart">+</button>
