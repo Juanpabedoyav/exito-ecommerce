@@ -12,7 +12,7 @@ export default function Categories  ({categories}: CategoriesProps) {
    
   return (
     <>
-      <Link href={"/"}>Back to Home</Link>
+      <Link href={"/"} className={styles["link-redirect"]}>Back to Home</Link>
       <section className={styles["categories-container"]}>
         {filter.map((category) => {
           return (

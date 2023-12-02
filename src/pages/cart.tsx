@@ -16,18 +16,21 @@ export default function Cart () {
   const totalOrder = state.cart.reduce((acc, product) => acc + product.price * product.quantity, 0)
 
   return (
-    <section>
-      <Link href={"/"}>Back to Home</Link>
-      {
-        state.cart.map((product) => (
-          <ProductShopping product={product} key={product.id} add={addProduct} remove={removeProduct} removeOneByOne={removeProductByOne}/>
-        )
-        )
-      }
-      <div className={styles.checkout}>
-        <h2>Total Order: $ {totalOrder}</h2>
-        <button className={styles["cart-button"]} onClick={() => router.push("/checkout")}><strong>Checkout</strong> {CreditCardIcon()}</button>
-      </div>
-    </section>
+    <>
+      <Link className={styles["link-redirect"]} href={"/"}>Back to Home</Link>
+      <section>
+        {
+          state.cart.map((product) => (
+            <ProductShopping product={product} key={product.id} add={addProduct} remove={removeProduct} removeOneByOne={removeProductByOne}/>
+          )
+          )
+        }
+        <div className={styles.checkout}>
+          <h2>Total Order: $ {totalOrder}</h2>
+          <button className={styles["cart-button"]} onClick={() => router.push("/checkout")}><strong>Checkout</strong> {CreditCardIcon()}</button>
+        </div>
+      </section>
+    </>
+
   )
 }

@@ -1,9 +1,9 @@
+import styles from "@/styles/Categories.module.scss"
 import { Product, ProductCart } from "@/interfaces/products"
 import HomeScreen from "@/screens/HomeScreen"
 import { GetStaticPropsContext } from "next"
 import Link from "next/link"
 import { useRouter } from "next/router"
-import React from "react"
 
 interface CategoryProps {
     productsWithQuantity: ProductCart[]
@@ -16,7 +16,7 @@ const Category = ({productsWithQuantity}: CategoryProps) => {
   const productsByCategory = productsWithQuantity && productsWithQuantity.filter((product) => product.category === category)
   return (
     <>
-      <Link href={"/categories"}>Back to Catergories</Link>
+      <Link className={styles["link-redirect"]} href={"/categories"}>Back to Catergories</Link>
       <HomeScreen products={productsByCategory}/>
     </>
   )

@@ -126,3 +126,22 @@
             background-color: #f78524;
         }
 }
+
+.link-redirect{
+    margin-left: 1rem;
+    cursor: pointer;
+    text-decoration: underline;
+    color: #f97b00;
+  }
+  .link-redirect--cart{
+    cursor: pointer;
+    text-decoration: underline;
+    color: #f97b00;
+    margin-bottom: 1rem;
+  }
+  .cart-buttons{
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        margin-top: 1rem;
+  }
