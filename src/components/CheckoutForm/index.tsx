@@ -1,6 +1,8 @@
 import styles from "@/styles/Checkout.module.scss"
+import productButton from "@/styles/Products.module.scss"
 import { CartContext } from "@/context/cart/CartContext"
 import {  useContext, useEffect, useState } from "react"
+import { ShippingIcon } from "../Icons"
 export default function CheckoutForm  (){
 
   const { state } = useContext(CartContext)
@@ -25,7 +27,7 @@ export default function CheckoutForm  (){
   }
 
   return(
-    <form action="" className={styles["form-checkout"]} >
+    <form className={styles["form-checkout"]} >
       <section className={styles["form-checkout--user"]} >
         <div>
           <label className={styles["form-checkout--user--title"]} htmlFor="">Name</label>
@@ -65,8 +67,7 @@ export default function CheckoutForm  (){
           <input className={styles["form-checkout--user--input"]} type="text" value={totalOrder}/>
         </div>
       </section>
-      <button>Confirm Payment</button>
+      <button className={productButton.button}>Confirm Payment<strong>{ShippingIcon()}</strong></button>
     </form>
   )
-
 }
