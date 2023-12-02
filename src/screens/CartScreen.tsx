@@ -19,9 +19,11 @@ export default function CartScreen  () {
   return (
     <div className={styles["cart-container"]}>
       <section className={styles.cart}>
-        <p className={styles["cart-close"]} onClick={() => toogleOrder()}>{CloseIcon()}</p>
+        <div className={styles["cart-buttons"]}>
+          <p className={styles["cart-close"]} onClick={() => toogleOrder()}>{CloseIcon()}</p>
+          <Link className={styles["link-redirect--cart"]} href={"/cart"}>Go to Cart</Link>
+        </div>
         <h1>Cart</h1>
-        <Link href={"/cart"}>Go to Cart</Link>
         {
           state.cart.length === 0 && <div className={styles["cart-empty"]}>
             <div>

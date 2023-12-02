@@ -1,3 +1,5 @@
+
+import styles from "@/styles/ProductDetail.module.scss"
 import { Product, ProductCart } from "@/interfaces/products"
 import ProductDetailScreen from "@/screens/ProductDetailScreen"
 import { GetStaticPropsContext } from "next"
@@ -9,7 +11,7 @@ interface ItemDetailProps {
 export default function ItemDetail  ({itemDetailswithQuantity}: ItemDetailProps){
   return (
     <>
-      <Link href={"/"}>Back to Home</Link>
+      <Link className={styles["link-redirect"]} href={"/"}>Back to Home</Link>
       <ProductDetailScreen product={itemDetailswithQuantity}/>
     </>
   )

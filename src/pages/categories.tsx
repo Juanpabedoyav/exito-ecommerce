@@ -1,4 +1,4 @@
-import styles from "@/styles/ProductDetail.module.scss"
+import styles from "@/styles/Categories.module.scss"
 import { Product } from "@/interfaces/products"
 import Link from "next/link"
 
@@ -11,16 +11,18 @@ export default function Categories  ({categories}: CategoriesProps) {
 
    
   return (
-    <div>
-      <Link href={"/"}>Back to Home</Link>
-      {filter.map((category) => {
-        return (
-          <Link href={"categories/"+ encodeURIComponent(category)} className={styles.card} key={category}>
-            <h1>{category.toUpperCase()}</h1>
-          </Link>
-        )
-      })}
-    </div>
+    <>
+      <Link href={"/"} className={styles["link-redirect"]}>Back to Home</Link>
+      <section className={styles["categories-container"]}>
+        {filter.map((category) => {
+          return (
+            <Link href={"categories/"+ encodeURIComponent(category)}  className={styles["categories-card"]} key={category}>
+              <h1>{category.toUpperCase()}</h1>
+            </Link>
+          )
+        })}
+      </section>
+    </>
   )
 }
 
