@@ -1,13 +1,17 @@
 import { Product, ProductCart } from "@/interfaces/products"
 import ProductDetailScreen from "@/screens/ProductDetailScreen"
 import { GetStaticPropsContext } from "next"
+import Link from "next/link"
 
 interface ItemDetailProps {
   itemDetailswithQuantity: ProductCart
 }
 export default function ItemDetail  ({itemDetailswithQuantity}: ItemDetailProps){
   return (
-    <ProductDetailScreen product={itemDetailswithQuantity}/>
+    <>
+      <Link href={"/"}>Back to Home</Link>
+      <ProductDetailScreen product={itemDetailswithQuantity}/>
+    </>
   )
 }
 
