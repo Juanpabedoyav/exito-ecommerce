@@ -21,7 +21,10 @@
         cursor: pointer;
         list-style: none;
     }
-   strong{
+    .cart-icon{
+        position: relative;
+    }
+   .cart-info{
     position: absolute;
     background-color: #f97b00;
     border-radius: 50%;
@@ -33,7 +36,7 @@
     line-height: 20px;
     font-size: 12px;
   }
-  strong::before, strong::after {
+  .cart-info::before, .cart-info::after {
     content:"";
     position:absolute;
     top: 50%;
@@ -43,11 +46,9 @@
     height: 20px;
     border: 1px solid #f97b00;
     border-radius:50%;
-    animation: latido linear 1.5s infinite;
+    animation: latido linear 1.2s infinite;
   }
-  .strong::after {
-    animation-delay: 1.5s;
-  }
+
   
   @keyframes latido {
     0% { width:25px; height:25px; border:1px solid #f97b00; }

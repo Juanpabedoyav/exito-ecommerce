@@ -17,11 +17,8 @@ export default function Header  ()  {
         </Link>
         <ul>
           <li>Categories</li>
-          <li style={{
-            position: "relative"
-          }}>{CartIcon()}
-            <strong >{state.cart.length}
-            </strong>
+          <li className={styles["cart-icon"]}>{CartIcon()}
+            <strong className={styles["cart-info"]}>{state.cart.length}</strong>
           </li>
         </ul>
       </nav>
