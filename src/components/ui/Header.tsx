@@ -4,6 +4,7 @@ import Link from "next/link"
 import { CartIcon } from "@/components/Icons"
 import { useContext } from "react"
 import { CartContext } from "@/context/cart/CartContext"
+import CartScreen from "@/screens/CartScreen"
 
 
 export default function Header  ()  {
@@ -23,6 +24,9 @@ export default function Header  ()  {
           </li>
         </ul>
       </nav>
+      {
+        state.isOpen && <CartScreen/>
+      }
     </header>
   )
 }

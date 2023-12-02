@@ -2,17 +2,14 @@ import styles from "@/styles/Home.module.scss"
 import Head from "next/head"
 import { Product, ProductCart } from "@/interfaces/products"
 import HomeScreen from "@/screens/HomeScreen"
-import { useContext, useRef, useState } from "react"
-import CartScreen from "@/screens/CartScreen"
-import { CartContext } from "@/context/cart/CartContext"
+import {  useRef, useState } from "react"
+
 
 
 interface HomeProps {
   products: ProductCart[]
 }
 export default function Home({products}: HomeProps) {
-  const { state } = useContext(CartContext)
-
   const [input, setInput] = useState("")
   //input search debounce
   const debounceRef = useRef<NodeJS.Timeout>()
@@ -42,10 +39,6 @@ export default function Home({products}: HomeProps) {
       <main>
         <input className={styles.search} type="text" onChange={handleSearch} placeholder="Search your product ..."/>
         < HomeScreen products={products} />
-        {
-          state.isOpen && <CartScreen/>
-        }
-        
       </main>
     </>
   )
