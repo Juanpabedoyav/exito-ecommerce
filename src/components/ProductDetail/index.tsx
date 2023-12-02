@@ -1,8 +1,8 @@
-import { CartContext } from "@/context/cart/CartContext"
-import {  ProductCart } from "@/interfaces/products"
-import Image from "next/image"
 import style from "@/styles/ProductDetail.module.scss"
+import {  ProductCart } from "@/interfaces/products"
 import { useContext } from "react"
+import { CartContext } from "@/context/cart/CartContext"
+import Image from "next/image"
 import Button from "../ui/Button"
 
 interface ProductDetailProps {
