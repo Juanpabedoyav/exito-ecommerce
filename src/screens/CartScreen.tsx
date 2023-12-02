@@ -21,7 +21,12 @@ export default function CartScreen  () {
         <p className={styles["cart-close"]} onClick={() => toogleOrder()}>{CloseIcon()}</p>
         <h1>Cart</h1>
         {
-          state.cart.length === 0 && <div>{CartEmptyIcon()}</div>
+          state.cart.length === 0 && <div className={styles["cart-empty"]}>
+            <div>
+              {CartEmptyIcon()}
+            </div>
+            <h2>Cart Empty</h2>
+          </div>
         }          
         {state.cart.map((product) => (
           <ProductShopping product={product} key={product.id} add={addProduct} remove={removeProduct}/>
