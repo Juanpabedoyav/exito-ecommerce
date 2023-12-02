@@ -2,6 +2,7 @@ import { CartContext } from "@/context/cart/CartContext"
 import {  ProductCart } from "@/interfaces/products"
 import Image from "next/image"
 import { useContext } from "react"
+import Button from "../ui/Button"
 
 interface ProductDetailProps {
     product: ProductCart
@@ -12,14 +13,15 @@ const ProductDetail = ({ product}: ProductDetailProps) => {
     <section>
       <div>
         <h1>{product.title}</h1>
-        <Image src={product.image} alt={product.title} width={200} height={200}/>
+        <Image priority quality={100} sizes="auto" src={product.image} alt={product.title} width={200} height={200}/>
         <p>{product.category}</p>
       </div>
       <div>
         <p>{product.description}</p>
         <p>{product.price}</p>
         <p>{product.rating.rate}</p>
-        <button onClick={() => addProduct(product)} title="add to cart">Add to Cart</button>
+        <Button onClick={() => addProduct(product)} title="add to cart"/>
+     
       </div>
     </section>
   )
