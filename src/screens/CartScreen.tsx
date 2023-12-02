@@ -2,6 +2,7 @@ import styles from "@/styles/Cart.module.scss"
 import ProductShopping from "@/components/ProductShopping"
 import { CartContext } from "@/context/cart/CartContext"
 import { useContext } from "react"
+import { CartEmptyIcon,  CloseIcon } from "@/components/Icons"
 
 export default function CartScreen  () {
   const {addProduct,state, removeProduct, toogleOrder} =useContext(CartContext)
@@ -9,14 +10,17 @@ export default function CartScreen  () {
   return (
     <div className={styles["cart-container"]}>
       <section className={styles.cart}>
-        <button onClick={() => toogleOrder()}>x</button>
+        <p className={styles["cart-close"]} onClick={() => toogleOrder()}>{CloseIcon()}</p>
         <h1>Cart</h1>
-        <ul>
+        <ul className={styles["cart-list"]}>
+          {
+            state.cart.length === 0 && <div>{CartEmptyIcon()}</div>
+          }          
           {state.cart.map((product) => (
             <ProductShopping product={product} key={product.id} add={addProduct} remove={removeProduct}/>
           ))}
         </ul>
-        <h2>Total Order: {totalOrder}</h2>
+        <h2>Total Order: $ {totalOrder}</h2>
         <button onClick={() => toogleOrder()}>Checkout</button>
       </section>
     </div>

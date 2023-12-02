@@ -16,13 +16,77 @@
     display: none;
 }
 .cart{
-    border: 1px solid red;
     z-index: 100;
     position: absolute;
     top: 0;
     right: 0;
     background-color: white;
     width: 70%;
+    min-height: 100vh;
     padding: 2rem;
+    border-radius: 0.5rem 0 0  0.5rem;
 
+}
+.cart-close{
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-end;
+}
+.cart-list{
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    max-height: 100vh;
+    gap: 1rem;
+}
+.cart-item{
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 1rem;
+}
+.cart-item--name{
+    font-weight: 600;
+}
+.cart-actions{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.cart-add--button{
+    cursor: pointer;
+    background-color: #f78524;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    margin: 0.5rem;
+}
+.cart-remove--button{
+    cursor: pointer;
+    background-color: #f78524;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+}
+.cart-delete-all-button{
+    cursor: pointer;
+    color: white;
+    background: none    ;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+}
+.cart-delete-all-button:hover{
+    background-color: #f78524;
+    cursor: pointer;
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: 600;
+   
 }
