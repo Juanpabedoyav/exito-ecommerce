@@ -84,50 +84,6 @@
 // }
 
 
-.card {
-  padding: 0.5rem;
-  width: 280px;
-  height: 633px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  border-radius:8px;
-  transition: background 200ms, border 200ms;
-  cursor: pointer;
-  section{
-    height: 80%;
-  }
-  img{
-    width: 80%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-    mix-blend-mode: darken
-    }
-}
-
-.card span {
-  display: inline-block;
-  transition: transform 200ms;
-}
-
-.card h2 {
-  font-weight: 600;
-  margin-bottom: 0.7rem;
-}
-
-.card p {
-  margin: 0;
-  opacity: 0.6;
-  font-size: 0.9rem;
-  line-height: 1.5;
-  max-width: 30ch;
-}
-  .card:hover {
-    background: rgba(0, 0, 0, 0.04);
-    outline: 1px solid #f78524;
-  }
-
 /* Enable hover only on non-touch devices */
 // @media (hover: hover) and (pointer: fine) {
 //   .card:hover {
