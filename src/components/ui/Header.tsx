@@ -1,9 +1,14 @@
 import styles from "@/styles/Home.module.scss"
 import Image from "next/image"
 import Link from "next/link"
+import { CartIcon } from "@/components/Icons"
+import { useContext } from "react"
+import { CartContext } from "@/context/cart/CartContext"
 
 
 export default function Header  ()  {
+  const {state} =  useContext(CartContext)
+  console.log(state)
   return (
     <header className={styles.header}>
       <nav className={styles.nav}>
@@ -12,7 +17,12 @@ export default function Header  ()  {
         </Link>
         <ul>
           <li>Categories</li>
-          <li>Cart</li>
+          <li style={{
+            position: "relative"
+          }}>{CartIcon()}
+            <strong >{state.cart.length}
+            </strong>
+          </li>
         </ul>
       </nav>
     </header>

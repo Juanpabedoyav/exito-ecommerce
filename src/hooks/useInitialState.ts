@@ -23,7 +23,7 @@ const useInitialState =() =>{
         item) 
       : 
       [...state.cart, { ...payload, totalprice: payload.unit_price * payload.quantity }]
-    console.log(newCart)
+    // console.log(newCart)
     return setState({
       ...state,
       cart: newCart,
