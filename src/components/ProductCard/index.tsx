@@ -1,5 +1,5 @@
+import style from "@/styles/ProductDetail.module.scss"
 import {  ProductCart } from "@/interfaces/products"
-import styles from "../../styles/Home.module.scss"
 import Image from "next/image"
 import { useRouter } from "next/router"
 import { useContext } from "react"
@@ -13,28 +13,24 @@ export default function ProductCard ({ product} : ProductCardProps) {
   const {addProduct} =useContext(CartContext)
   
   return (
-    <div className={styles.card}>
+    <div >
       <section
+        className={style.card}
         onClick={() => router.push(`/itemDetail/${product.id}`)}
         key={product.id}
       >
-        <Image priority quality={100} src={product.image} alt={product.title} width={100} height={250}/>
-        <h2>
-          {product.title} 
-          <span>-&gt;</span>
-        </h2>
-        <p>
-          {product.category}
-        </p>
-        <p>
-          {product.price}
-       
-        </p>
-        <p>
-          {product.rating.rate}
-        </p>
+        <figure className={style["product-image--card"]}>
+          <Image priority quality={100} src={product.image} alt={product.title} width={250} height={100}/>
+
+        </figure>
+        <div className={style["product-info--card"]}>
+          <p className={style["product-category--card"]}>{product.category.toUpperCase()}</p>
+          <p className={style["product-name--card"]} >{product.title.slice(0,50)}...</p>
+          <p className={style["product-price--card"]}>Price: ${product.price}</p>
+          <p>Rating:{product.rating.rate}</p>
+        </div>
+        <Button onClick={()=> addProduct(product)} title="Add to cart"/>
       </section>
-      <Button onClick={()=> addProduct(product)} title="Add to cart"/>
     </div>
   )
 }
