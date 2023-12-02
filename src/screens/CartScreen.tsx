@@ -2,10 +2,18 @@ import styles from "@/styles/Cart.module.scss"
 import ProductShopping from "@/components/ProductShopping"
 import { CartContext } from "@/context/cart/CartContext"
 import { useContext } from "react"
-import { CartEmptyIcon,  CloseIcon } from "@/components/Icons"
+import { CartEmptyIcon,  CloseIcon, CreditCardIcon } from "@/components/Icons"
+import { useRouter } from "next/navigation"
 
 export default function CartScreen  () {
+  const router = useRouter()
   const {addProduct,state, removeProduct, toogleOrder} =useContext(CartContext)
+
+  const handleCheckout = () => {
+    router.push("/checkout")
+    toogleOrder()
+  }
+
   const totalOrder = state.cart.reduce((acc, product) => acc + product.price, 0)
   return (
     <div className={styles["cart-container"]}>
@@ -20,8 +28,10 @@ export default function CartScreen  () {
             <ProductShopping product={product} key={product.id} add={addProduct} remove={removeProduct}/>
           ))}
         </ul>
-        <h2>Total Order: $ {totalOrder}</h2>
-        <button onClick={() => toogleOrder()}>Checkout</button>
+        <div >
+          <h2>Total Order: $ {totalOrder}</h2>
+          <button className={styles["cart-checkout"]} onClick={() => handleCheckout()}><strong>Checkout</strong> {CreditCardIcon()}</button>
+        </div>
       </section>
     </div>
   )
