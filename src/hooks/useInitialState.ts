@@ -18,17 +18,32 @@ const useInitialState =() =>{
     const productExist = state.cart.find((item) => item.id === payload.id)
     const newCart = productExist  ? 
       state.cart.map((item) => item.id === payload.id ? 
-        { ...item, quantity: item.quantity + payload.quantity, totalprice: (item.quantity + payload.quantity) * item.unit_price}
+        { ...item, quantity: item.quantity + 1, totalprice: (item.quantity + payload.quantity) * item.unit_price}
         : 
         item) 
       : 
       [...state.cart, { ...payload, totalprice: payload.unit_price * payload.quantity }]
-    // console.log(newCart)
     return setState({
       ...state,
       cart: newCart,
     })
   }
+  const removeProductByOne = (payload: ProductCart) =>{
+    const productExist = state.cart.find((item) => item.id === payload.id)
+    const newCart = productExist  ? 
+      state.cart.map((item) => item.id === payload.id && item.quantity > 1? 
+        { ...item, quantity: item.quantity - 1, totalprice: (item.quantity - payload.quantity) * item.unit_price}
+        : 
+        item) 
+      : 
+      [...state.cart, { ...payload, totalprice: payload.unit_price * payload.quantity }]
+    return setState({
+      ...state,
+      cart: newCart,
+    })
+  }
+
+
   const removeProduct = (payload: ProductCart) =>{
     const newCart = state.cart.filter((item) => item.id !== payload.id)
     return setState({
@@ -50,6 +65,7 @@ const useInitialState =() =>{
     state,
     addProduct,
     removeProduct,
+    removeProductByOne,
     toogleOrder,
   }
 

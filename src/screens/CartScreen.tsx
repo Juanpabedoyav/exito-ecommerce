@@ -7,30 +7,33 @@ import { useRouter } from "next/navigation"
 
 export default function CartScreen  () {
   const router = useRouter()
-  const {addProduct,state, removeProduct, toogleOrder} =useContext(CartContext)
+  const {addProduct,state, removeProduct, removeProductByOne,toogleOrder} =useContext(CartContext)
 
   const handleCheckout = () => {
     router.push("/checkout")
     toogleOrder()
   }
 
-  const totalOrder = state.cart.reduce((acc, product) => acc + product.price, 0)
+  const totalOrder = state.cart.reduce((acc, product) => acc + product.price * product.quantity, 0)
   return (
     <div className={styles["cart-container"]}>
       <section className={styles.cart}>
         <p className={styles["cart-close"]} onClick={() => toogleOrder()}>{CloseIcon()}</p>
         <h1>Cart</h1>
-        <ul className={styles["cart-list"]}>
-          {
-            state.cart.length === 0 && <div>{CartEmptyIcon()}</div>
-          }          
-          {state.cart.map((product) => (
-            <ProductShopping product={product} key={product.id} add={addProduct} remove={removeProduct}/>
-          ))}
-        </ul>
-        <div >
+        {
+          state.cart.length === 0 && <div className={styles["cart-empty"]}>
+            <div>
+              {CartEmptyIcon()}
+            </div>
+            <h2>Cart Empty</h2>
+          </div>
+        }          
+        {state.cart.map((product) => (
+          <ProductShopping product={product} key={product.id} add={addProduct} remove={removeProduct} removeOneByOne={removeProductByOne}/>
+        ))}
+        <div className={styles.checkout}>
           <h2>Total Order: $ {totalOrder}</h2>
-          <button className={styles["cart-checkout"]} onClick={() => handleCheckout()}><strong>Checkout</strong> {CreditCardIcon()}</button>
+          <button className={styles["cart-button"]} onClick={() => handleCheckout()}><strong>Checkout</strong> {CreditCardIcon()}</button>
         </div>
       </section>
     </div>
