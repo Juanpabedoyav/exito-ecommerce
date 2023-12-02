@@ -2,8 +2,8 @@ import styles from "@/styles/Home.module.scss"
 import Head from "next/head"
 import { Product, ProductCart } from "@/interfaces/products"
 import HomeScreen from "@/screens/HomeScreen"
-import { useRef, useState } from "react"
-import CartScreen from "@/screens/CartScreen"
+import {  useRef, useState } from "react"
+
 
 
 interface HomeProps {
@@ -39,7 +39,6 @@ export default function Home({products}: HomeProps) {
       <main>
         <input className={styles.search} type="text" onChange={handleSearch} placeholder="Search your product ..."/>
         < HomeScreen products={products} />
-        <CartScreen />
       </main>
     </>
   )

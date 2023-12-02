@@ -1,21 +1,39 @@
+import styles from "@/styles/Cart.module.scss"
 import ProductShopping from "@/components/ProductShopping"
 import { CartContext } from "@/context/cart/CartContext"
 import { useContext } from "react"
+import { CartEmptyIcon,  CloseIcon, CreditCardIcon } from "@/components/Icons"
+import { useRouter } from "next/navigation"
 
 export default function CartScreen  () {
-  const {addProduct,state, removeProduct} =useContext(CartContext)
+  const router = useRouter()
+  const {addProduct,state, removeProduct, toogleOrder} =useContext(CartContext)
+
+  const handleCheckout = () => {
+    router.push("/checkout")
+    toogleOrder()
+  }
+
   const totalOrder = state.cart.reduce((acc, product) => acc + product.price, 0)
   return (
-    <section>
-      <h1>Cart</h1>
-      <ul>
-        {state.cart.map((product) => (
-          <ProductShopping product={product} key={product.id} add={addProduct} remove={removeProduct}/>
-        ))}
-      </ul>
-      <h2>Total Order: {totalOrder}</h2>
-      <button>Checkout</button>
-    </section>
+    <div className={styles["cart-container"]}>
+      <section className={styles.cart}>
+        <p className={styles["cart-close"]} onClick={() => toogleOrder()}>{CloseIcon()}</p>
+        <h1>Cart</h1>
+        <ul className={styles["cart-list"]}>
+          {
+            state.cart.length === 0 && <div>{CartEmptyIcon()}</div>
+          }          
+          {state.cart.map((product) => (
+            <ProductShopping product={product} key={product.id} add={addProduct} remove={removeProduct}/>
+          ))}
+        </ul>
+        <div >
+          <h2>Total Order: $ {totalOrder}</h2>
+          <button className={styles["cart-checkout"]} onClick={() => handleCheckout()}><strong>Checkout</strong> {CreditCardIcon()}</button>
+        </div>
+      </section>
+    </div>
   )
 }
   

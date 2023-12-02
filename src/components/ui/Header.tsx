@@ -4,10 +4,11 @@ import Link from "next/link"
 import { CartIcon } from "@/components/Icons"
 import { useContext } from "react"
 import { CartContext } from "@/context/cart/CartContext"
+import CartScreen from "@/screens/CartScreen"
 
 
 export default function Header  ()  {
-  const {state} =  useContext(CartContext)
+  const {state, toogleOrder} =  useContext(CartContext)
   console.log(state)
   return (
     <header className={styles.header}>
@@ -17,12 +18,15 @@ export default function Header  ()  {
         </Link>
         <ul>
           <li>Categories</li>
-          <li className={styles["cart-icon"]}>{CartIcon()}
+          <li onClick={()=> toogleOrder()} className={styles["cart-icon"]}>{CartIcon()}
             <strong className={styles["cart-info"]}>{state.cart.length}
             </strong>
           </li>
         </ul>
       </nav>
+      {
+        state.isOpen && <CartScreen/>
+      }
     </header>
   )
 }
