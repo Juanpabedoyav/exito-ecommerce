@@ -3,11 +3,11 @@ import ProductDetailScreen from "@/screens/ProductDetailScreen"
 import { GetStaticPropsContext } from "next"
 
 interface ItemDetailProps {
-    itemDetails: ProductCart
+  itemDetailswithQuantity: ProductCart
 }
-export default function ItemDetail  ({itemDetails}: ItemDetailProps){
+export default function ItemDetail  ({itemDetailswithQuantity}: ItemDetailProps){
   return (
-    <ProductDetailScreen product={itemDetails}/>
+    <ProductDetailScreen product={itemDetailswithQuantity}/>
   )
 }
 
@@ -33,11 +33,15 @@ export async function getStaticProps({ params }: GetStaticPropsContext) {
   if(!params?.id) return {props: {}}
   const res = await fetch("https://fakestoreapi.com/products/" + params.id)
   const itemDetails : Product = await res.json()
+  const itemDetailswithQuantity =  {
+    ...itemDetails,
+    quantity: 1,
+  }
   // // By returning { props: { products } }, the Blog component
   // // will receive `products` as a prop at build time
   return {
     props: {
-      itemDetails,
+      itemDetailswithQuantity,
     },
     revalidate: 1,
   }

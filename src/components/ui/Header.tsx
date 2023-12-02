@@ -9,7 +9,6 @@ import CartScreen from "@/screens/CartScreen"
 
 export default function Header  ()  {
   const {state, toogleOrder} =  useContext(CartContext)
-  console.log(state)
   return (
     <header className={styles.header}>
       <nav className={styles.nav}>

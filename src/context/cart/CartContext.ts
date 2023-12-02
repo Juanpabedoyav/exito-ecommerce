@@ -9,6 +9,7 @@ export interface CartContextProps {
     }
     addProduct: (payload: ProductCart) => void,
     removeProduct: (payload: ProductCart) => void,
+    removeProductByOne: (payload: ProductCart) => void,
     toogleOrder: () => void,
 }
 

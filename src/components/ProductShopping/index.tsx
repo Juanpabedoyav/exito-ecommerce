@@ -6,8 +6,9 @@ interface ProductCartProps {
     product: ProductCart,
     add: (product: ProductCart) => void,
     remove: (product: ProductCart) => void
+    removeOneByOne: (product: ProductCart) => void
 }
-export default function ProductShopping ({ product , add, remove} : ProductCartProps) {
+export default function ProductShopping ({ product , add, remove, removeOneByOne} : ProductCartProps) {
   return (
     
     <div
@@ -16,12 +17,13 @@ export default function ProductShopping ({ product , add, remove} : ProductCartP
     >
       <Image src={product.image} alt={product.title} width={80} height={80}/>
       <p className={styles["cart-item--name"]}>{product.title} </p>
-      <p> Price c/u: {product.price}</p>
+      <p> Price c/u: ${product.price}</p>
       <p> Quantity: {product.quantity}</p>
+      <p> SubTotal: ${product.price * product.quantity}</p>
       <div className={styles["cart-actions"]} >
         <button className={styles["cart-add--button"]} onClick={()=>add(product)} title="Add to cart">+</button>
-        <button className={styles["cart-remove--button"]}onClick={()=>remove(product)} title="Remove from cart">-</button>
-        <button className={styles["cart-delete-all-button"]}>{DeleteIcon()}</button>
+        <button className={styles["cart-remove--button"]} onClick={()=> removeOneByOne(product)} title="Remove from cart">-</button>
+        <button className={styles["cart-delete-all-button"]} onClick={()=>remove(product)}>{DeleteIcon()}</button>
       </div>
     </div>
 
