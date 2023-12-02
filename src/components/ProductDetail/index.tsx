@@ -1,6 +1,7 @@
 import { CartContext } from "@/context/cart/CartContext"
 import {  ProductCart } from "@/interfaces/products"
 import Image from "next/image"
+import style from "@/styles/ProductDetail.module.scss"
 import { useContext } from "react"
 import Button from "../ui/Button"
 
@@ -10,18 +11,17 @@ interface ProductDetailProps {
 const ProductDetail = ({ product}: ProductDetailProps) => {
   const {addProduct} =useContext(CartContext)
   return (
-    <section>
-      <div>
-        <h1>{product.title}</h1>
-        <Image priority quality={100} sizes="auto" src={product.image} alt={product.title} width={200} height={200}/>
-        <p>{product.category}</p>
+    <section className={style["product-fields"]}>
+      <div className={style["product-image"]}>
+        <h1 className={style["product-name"]}>{product.title}</h1>
+        <p className={style["product-category"]}>Category: {product.category}</p>
+        <Image  priority quality={100} sizes="auto" src={product.image} alt={product.title} width={200} height={200}/>
       </div>
-      <div>
-        <p>{product.description}</p>
-        <p>{product.price}</p>
-        <p>{product.rating.rate}</p>
+      <div className={style["product-info"]}>
+        <p className={style["product-description"]}><strong>Description:</strong> {product.description}</p>
+        <p className={style["product-price"]}>Price: ${product.price}</p>
+        <p>Rating:{product.rating.rate}</p>
         <Button onClick={() => addProduct(product)} title="add to cart"/>
-     
       </div>
     </section>
   )

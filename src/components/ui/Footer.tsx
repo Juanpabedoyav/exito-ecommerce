@@ -16,9 +16,9 @@ export default function Footer  ()  {
       </ul>
       <h4>Follow us</h4>
       <ul className={styles.partners}>
-        <Link href="">
+        <Link href="/">
         </Link>
-        <Link href="">
+        <Link href="/">
         </Link>
       </ul>
       <h4>Security pay</h4>
