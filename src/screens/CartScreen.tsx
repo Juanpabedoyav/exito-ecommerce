@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation"
 
 export default function CartScreen  () {
   const router = useRouter()
-  const {addProduct,state, removeProduct, toogleOrder} =useContext(CartContext)
+  const {addProduct,state, removeProduct, removeProductByOne,toogleOrder} =useContext(CartContext)
 
   const handleCheckout = () => {
     router.push("/checkout")
@@ -29,7 +29,7 @@ export default function CartScreen  () {
           </div>
         }          
         {state.cart.map((product) => (
-          <ProductShopping product={product} key={product.id} add={addProduct} remove={removeProduct}/>
+          <ProductShopping product={product} key={product.id} add={addProduct} remove={removeProduct} removeOneByOne={removeProductByOne}/>
         ))}
         <div className={styles.checkout}>
           <h2>Total Order: $ {totalOrder}</h2>
