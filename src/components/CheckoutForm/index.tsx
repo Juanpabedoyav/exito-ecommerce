@@ -23,7 +23,7 @@ export default function CheckoutForm  (){
   async function getUbicacion(urlApi:string){
     const res = await fetch(urlApi)
     const {results} = await res.json()
-    setUbicacion(results[0].formatted_address)
+    setUbicacion(results[0]?.formatted_address)
   }
 
   return(
