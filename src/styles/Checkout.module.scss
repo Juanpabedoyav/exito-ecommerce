@@ -1,0 +1,37 @@
+.form-checkout-container{
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background-color: #fff;
+    box-shadow: 0 0 5px #ccc;
+    width: 90%;
+    margin: 0 auto;
+}
+.form-checkout{
+    display: flex;
+    flex-direction: column;
+
+
+    .form-checkout--user{
+
+      
+    }
+}
+
+.form-checkout--user--title{
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 1.2rem;
+
+}
+
+.form-checkout--user--input{
+    margin-bottom: 1rem;
+    padding: 0.4rem;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    font-size: 1rem;
+}
