@@ -1,0 +1,36 @@
+.categories-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 0 auto;
+    padding: 1rem;
+    max-width: 1200px;
+    .categories-card{
+      margin: 1rem;
+    }
+}
+.categories-card{
+    padding: 0.5rem;
+    width: 280px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    border-radius:8px;
+    justify-content: center;
+    align-items: center;
+    transition: background 200ms, border 200ms;
+    cursor: pointer;
+    outline: 1px solid #f787243a;
+    box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.2);
+  
+  }
+  .categories-card:hover {
+    background: rgba(0, 0, 0, 0.04);
+    outline: 1px solid #f78524;
+  }
+  .link-redirect{
+    margin-left: 1rem;
+    cursor: pointer;
+    text-decoration: underline;
+    color: #f97b00;
+  }
