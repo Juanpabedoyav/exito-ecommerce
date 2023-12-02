@@ -48,7 +48,13 @@ export async function getStaticProps() {
   // Call an external API endpoint to get posts.
   // You can use any data fetching library
   const res = await fetch("https://fakestoreapi.com/products")
-  const products : Product[] = await res.json()
+  let products : Product[] = await res.json()
+  products  = products.map((product) => {
+    return {
+      ...product,
+      quantity: 1,
+    }
+  })
   // By returning { props: { products } }, the Blog component
   // will receive `products` as a prop at build time
   return {
