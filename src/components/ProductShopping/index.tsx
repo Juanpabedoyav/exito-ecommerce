@@ -19,6 +19,7 @@ export default function ProductShopping ({ product , add, remove, removeOneByOne
       <p className={styles["cart-item--name"]}>{product.title} </p>
       <p> Price c/u: ${product.price}</p>
       <p> Quantity: {product.quantity}</p>
+      <p> SubTotal: ${product.price * product.quantity}</p>
       <div className={styles["cart-actions"]} >
         <button className={styles["cart-add--button"]} onClick={()=>add(product)} title="Add to cart">+</button>
         <button className={styles["cart-remove--button"]} onClick={()=> removeOneByOne(product)} title="Remove from cart">-</button>

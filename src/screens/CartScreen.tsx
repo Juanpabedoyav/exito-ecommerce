@@ -14,7 +14,7 @@ export default function CartScreen  () {
     toogleOrder()
   }
 
-  const totalOrder = state.cart.reduce((acc, product) => acc + product.price, 0)
+  const totalOrder = state.cart.reduce((acc, product) => acc + product.price * product.quantity, 0)
   return (
     <div className={styles["cart-container"]}>
       <section className={styles.cart}>
