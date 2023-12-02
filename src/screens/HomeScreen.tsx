@@ -8,7 +8,7 @@ interface HomeScreenProps {
 export default function HomeScreen  ({ products }: HomeScreenProps) {
   return (
     <section className={styles.list}>
-      {products.map((product) => (
+      {products?.map((product) => (
         <ProductCard product={product} key={product.id} />
       ))}
     </section>

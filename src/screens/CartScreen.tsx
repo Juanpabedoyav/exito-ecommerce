@@ -4,6 +4,7 @@ import { CartContext } from "@/context/cart/CartContext"
 import { useContext } from "react"
 import { CartEmptyIcon,  CloseIcon, CreditCardIcon } from "@/components/Icons"
 import { useRouter } from "next/navigation"
+import Link from "next/link"
 
 export default function CartScreen  () {
   const router = useRouter()
@@ -20,6 +21,7 @@ export default function CartScreen  () {
       <section className={styles.cart}>
         <p className={styles["cart-close"]} onClick={() => toogleOrder()}>{CloseIcon()}</p>
         <h1>Cart</h1>
+        <Link href={"/cart"}>Go to Cart</Link>
         {
           state.cart.length === 0 && <div className={styles["cart-empty"]}>
             <div>
