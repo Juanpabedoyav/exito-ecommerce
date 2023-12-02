@@ -34,18 +34,13 @@
     display: flex;
     justify-content: flex-end;
 }
-.cart-list{
-    margin-top: 2rem;
-    display: flex;
-    flex-direction: column;
-    max-height: 100vh;
-    gap: 1rem;
-}
+
 .cart-item{
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid #ccc;
     padding-bottom: 1rem;
+    margin-top: 1rem;
 }
 .cart-item--name{
     font-weight: 600;
@@ -92,7 +87,10 @@
    
 }
 
-.cart-checkout{
+.checkout{
+    margin: 1rem 0;
+}
+.cart-button{
         width: 100%;
         height: 43px;
         border-radius: 8px;
@@ -105,6 +103,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        margin: 0.3rem 0;
         strong{
             margin-right: 0.5rem;
         }

@@ -20,17 +20,15 @@ export default function CartScreen  () {
       <section className={styles.cart}>
         <p className={styles["cart-close"]} onClick={() => toogleOrder()}>{CloseIcon()}</p>
         <h1>Cart</h1>
-        <ul className={styles["cart-list"]}>
-          {
-            state.cart.length === 0 && <div>{CartEmptyIcon()}</div>
-          }          
-          {state.cart.map((product) => (
-            <ProductShopping product={product} key={product.id} add={addProduct} remove={removeProduct}/>
-          ))}
-        </ul>
-        <div >
+        {
+          state.cart.length === 0 && <div>{CartEmptyIcon()}</div>
+        }          
+        {state.cart.map((product) => (
+          <ProductShopping product={product} key={product.id} add={addProduct} remove={removeProduct}/>
+        ))}
+        <div className={styles.checkout}>
           <h2>Total Order: $ {totalOrder}</h2>
-          <button className={styles["cart-checkout"]} onClick={() => handleCheckout()}><strong>Checkout</strong> {CreditCardIcon()}</button>
+          <button className={styles["cart-button"]} onClick={() => handleCheckout()}><strong>Checkout</strong> {CreditCardIcon()}</button>
         </div>
       </section>
     </div>
