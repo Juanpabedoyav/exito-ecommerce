@@ -13,9 +13,10 @@ export default function ProductCard ({ product} : ProductCardProps) {
   const {addProduct} =useContext(CartContext)
   
   return (
-    <div >
+    <div 
+      className={style.card}
+    >
       <section
-        className={style.card}
         onClick={() => router.push(`/itemDetail/${product.id}`)}
         key={product.id}
       >
@@ -29,8 +30,8 @@ export default function ProductCard ({ product} : ProductCardProps) {
           <p className={style["product-price--card"]}>Price: ${product.price}</p>
           <p>Rating:{product.rating.rate}</p>
         </div>
-        <Button onClick={()=> addProduct(product)} title="Add to cart"/>
       </section>
+      <Button onClick={()=> addProduct(product)} title="Add to cart"/>
     </div>
   )
 }
