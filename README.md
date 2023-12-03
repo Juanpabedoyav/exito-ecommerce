@@ -1,40 +1,40 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Next JS PAGES + TypeScript  - Éxito Ecommerce 
 
-## Getting Started
+## Requisitos Previos
+Antes de comenzar con este proyecto, asegúrate de tener instalado Node.js y npm en tu sistema. Puedes descargar Node.js desde nodejs.org, y npm.
 
-First, run the development server:
+## Instalación
+Sigue estos pasos para configurar y ejecutar la aplicación en tu máquina:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+1. Clona este repositorio:
 ```
+git clone https://github.com/Juanpabedoyav/exito-ecommerce.git
+```
+2. Navega al directorio del proyecto:
+```
+cd exito-ecommerce
+```
+3. Instala las dependencias con npm:
+```
+npm install
+```
+## Uso
+Una vez que hayas instalado todas las dependencias, puedes ejecutar la aplicación en un entorno de desarrollo local:
+```
+npm run dev
+```
+## Test
+Puedes ejecutar los test en un entorno local:
+```
+npm run test
+```
+Esto iniciará el servidor de desarrollo de Next JS pages y abrirá la aplicación en tu navegador predeterminado. Cualquier cambio que realices en el código se reflejará automáticamente en el navegador.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+# Contacto
+* bedoyavascojuanpablo@gmail.com
+* juanpabedoyav.com
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## Lighthouse Test
+### Desktop
+![Image text]()
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
