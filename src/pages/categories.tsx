@@ -1,6 +1,7 @@
 import styles from "@/styles/Categories.module.scss"
 import { Product } from "@/interfaces/products"
 import Link from "next/link"
+import useSeo from "@/hooks/useSeo"
 
 interface CategoriesProps {
     categories: string[]
@@ -9,7 +10,11 @@ export default function Categories  ({categories}: CategoriesProps) {
   let filter: string[] = categories && categories.map((item) =>  item)
   filter = filter.filter((value, index, array) => array.indexOf(value) === index)
 
-   
+  //    SEO
+  useSeo({
+    title: "Categories",
+    description: "Categories page" ,
+  })
   return (
     <>
       <Link href={"/"} className={styles["link-redirect"]}>Back to Home</Link>

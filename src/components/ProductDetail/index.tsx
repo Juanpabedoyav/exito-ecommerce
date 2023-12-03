@@ -5,12 +5,19 @@ import { CartContext } from "@/context/cart/CartContext"
 import Image from "next/image"
 import Button from "../ui/Button"
 import { renderStars } from "../Icons"
+import useSeo from "@/hooks/useSeo"
 
 interface ProductDetailProps {
     product: ProductCart
 }
 const ProductDetail = ({ product}: ProductDetailProps) => {
   const {addProduct} =useContext(CartContext)
+
+  //SEO
+  useSeo({
+    title: product.title,
+    description: product.description,
+  })
   return (
     <section className={style["product-fields"]}>
       <div className={style["product-image"]}>
