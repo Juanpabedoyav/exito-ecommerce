@@ -1,7 +1,6 @@
 import React from "react"
 import { render } from "@testing-library/react"
 import  Categories  from "@/pages/categories"
-import { describe } from "node:test"
 
 describe("Categories", () => {
   it("Should render list of categories", () => {
