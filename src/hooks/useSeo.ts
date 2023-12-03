@@ -1,8 +1,12 @@
 import { useEffect } from "react"
 
+type SeoProps ={
+  title: string 
+  description: string 
 
+}
 
-const useSeo = ({title, description}:{title: string, description: string})=>{
+const useSeo = ({title, description}:SeoProps)=>{
 
   useEffect(() => {
     document.title = title

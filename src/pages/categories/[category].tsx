@@ -4,6 +4,7 @@ import HomeScreen from "@/screens/HomeScreen"
 import { GetStaticPropsContext } from "next"
 import Link from "next/link"
 import { useRouter } from "next/router"
+import useSeo from "@/hooks/useSeo"
 
 interface CategoryProps {
     productsWithQuantity: ProductCart[]
@@ -12,7 +13,12 @@ interface CategoryProps {
 const Category = ({productsWithQuantity}: CategoryProps) => {
   const router = useRouter()
   const { category } = router.query
-  //   console.log(category)
+  // SEO
+  if(!category) return null
+  useSeo({
+    title: `Category ${category}`,
+    description: "Category page",
+  })
   const productsByCategory = productsWithQuantity && productsWithQuantity.filter((product) => product.category === category)
   return (
     <>
