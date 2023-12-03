@@ -30,6 +30,9 @@ npm run test
 ```
 Esto iniciará el servidor de desarrollo de Next JS pages y abrirá la aplicación en tu navegador predeterminado. Cualquier cambio que realices en el código se reflejará automáticamente en el navegador.
 
+# Dificultad 
+No sabia como implementar el workflow con GraphQL
+
 # Contacto
 * bedoyavascojuanpablo@gmail.com
 * juanpabedoyav.com
