@@ -5,6 +5,7 @@ import { useContext } from "react"
 import { CartEmptyIcon,  CloseIcon, CreditCardIcon } from "@/components/Icons"
 import { useRouter } from "next/navigation"
 import Link from "next/link"
+import useSeo from "@/hooks/useSeo"
 
 export default function CartScreen  () {
   const router = useRouter()
@@ -14,6 +15,11 @@ export default function CartScreen  () {
     router.push("/checkout")
     toogleOrder()
   }
+  // SEO
+  useSeo({
+    title: "Cart is " + `${state.cart.length === 0 ? "empty" : state.cart.length}`,
+    description: "Cart page",
+  })
 
   const totalOrder = state.cart.reduce((acc, product) => acc + product.price * product.quantity, 0)
   return (
