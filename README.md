@@ -36,5 +36,5 @@ Esto iniciará el servidor de desarrollo de Next JS pages y abrirá la aplicaci�
 
 ## Lighthouse Test
 ### Desktop
-![Image text]()
+![Image text](https://res.cloudinary.com/dflxhnzgs/image/upload/v1701592434/a6ydeclcgywd3j3bw2jt.png)
 
