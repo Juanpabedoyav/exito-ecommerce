@@ -1,5 +1,5 @@
 .list{
-   margin-top: 4rem;
+   margin: 4rem 0;
    display: flex;
    flex-wrap: wrap;
    gap: 1rem;
@@ -23,3 +23,10 @@
        margin-left: 0.5rem;
    }
 }
+
+@media screen and (min-width: 750px) {
+   .list{
+      padding: 0 6rem;
+  
+   }
+ }
