@@ -146,3 +146,30 @@
   text-decoration: underline;
   color: #f97b00;
 }
+
+@media screen and (min-width: 750px) {
+  .product-fields{
+   display: flex;
+   flex-direction: row  ;
+   padding: 1rem;
+
+   .product-image{
+    img{
+        width: 60%;
+        height: auto;
+        mix-blend-mode: darken;
+        display: block;
+        margin: 0 auto;
+    }
+      .product-category{
+          margin: 0.5rem 0;
+      }
+    }
+    .product-info{
+      align-items: flex-start ;
+    }
+  }
+  .link-redirect{
+    margin-left: 10rem;
+  }
+}

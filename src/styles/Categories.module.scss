@@ -34,3 +34,9 @@
     text-decoration: underline;
     color: #f97b00;
   }
+
+  @media screen and (min-width: 750px) {
+    .link-redirect{
+      margin-left: 10rem;
+    }
+  }

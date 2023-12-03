@@ -42,7 +42,6 @@
     overflow-y: scroll;
     display: flex;
     flex-direction: column;
-
 }
 .cart-close{
     cursor: pointer;
@@ -177,3 +176,37 @@
         margin: 1rem 0;
     }
 }
+
+@media screen and (min-width: 750px) {
+   
+    .cart{
+        width: 50%;
+    }
+    .cart-item{
+        padding: 1rem;
+        }
+       
+        .cart-button{
+            width: 50%;
+            margin: 0 auto;
+        }
+        .cart-container--full{
+            width: 80%;
+            margin: 0 auto;
+        }
+        .cart-empty--full{
+            height: 400px;
+            div{
+                width: 20%;
+                height: 100%;
+            }
+        }
+        .checkout{
+            h2{
+                text-align: center;
+            }
+        }
+        .link-redirect{
+            margin-left: 10rem;
+          }
+  }
